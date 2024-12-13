@@ -1,4 +1,6 @@
 import streamlit as st
+from st_aggrid import AgGrid
+import pandas as pd
 
 
 GENRES_LIST = [
@@ -16,11 +18,18 @@ GENRES_LIST = [
     },
 ]
 
+
 def show_genres():
     st.write('Lista de Gêneros: ')
-    st.table(GENRES_LIST)
+    df_genres = pd.DataFrame(GENRES_LIST)
+    AgGrid(
+        data=df_genres,
+        fit_columns_on_grid_load=True,
+        reload_data=True,
+        key='genres_grid',
+    )
 
     st.title('Cadastrar Gênero: ')
     name = st.text_input('Nome: ')
     if st.button('Cadastrar'):
-        st.success(f'Gênero {name} cadastrado com sucesso!')
+        st.success(f'Gênero "{name}" cadastrado com sucesso!')
