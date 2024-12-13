@@ -17,6 +17,10 @@ GENRES_LIST = [
 ]
 
 def show_genres():
-    for genre in GENRES_LIST:
-        st.write(genre)
-        st.divider()
+    st.write('Lista de Gêneros: ')
+    st.table(GENRES_LIST)
+
+    st.title('Cadastrar Gênero: ')
+    name = st.text_input('Nome: ')
+    if st.button('Cadastrar'):
+        st.success(f'Gênero {name} cadastrado com sucesso!')
