@@ -1,6 +1,7 @@
 import streamlit as st
 from st_aggrid import AgGrid
 import pandas as pd
+from utils.decorators import login_decorator
 
 
 MOVIES_LIST = [
@@ -22,6 +23,7 @@ MOVIES_LIST = [
 ]
 
 
+@login_decorator
 def show_movies():
     st.write('Lista de Filmes: ')
     df_movies = pd.DataFrame(MOVIES_LIST)

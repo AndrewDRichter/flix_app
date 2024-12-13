@@ -3,6 +3,7 @@ from genres.page import show_genres
 from actors.page import show_actors
 from movies.page import show_movies
 from reviews.page import show_reviews
+from utils.decorators import login_decorator
 
 
 def main():
