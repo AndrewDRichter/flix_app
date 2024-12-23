@@ -16,7 +16,6 @@ def show_genres():
         AgGrid(
             data=genres_df,
             fit_columns_on_grid_load=True,
-            reload_data=True,
             key='genres_grid',
         )
     else:
