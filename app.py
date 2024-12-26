@@ -3,6 +3,7 @@ from genres.page import show_genres
 from actors.page import show_actors
 from movies.page import show_movies
 from reviews.page import show_reviews
+from home.page import show_home
 
 
 def main():
@@ -14,7 +15,7 @@ def main():
     )
 
     if menu_option == 'Inicio':
-        st.write(f'Tela de {menu_option}')
+        show_home()
 
     if menu_option == 'Gêneros':
         show_genres()

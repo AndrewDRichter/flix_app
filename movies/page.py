@@ -8,25 +8,6 @@ from genres.service import GenreService
 from actors.service import ActorService
 
 
-MOVIES_LIST = [
-    {
-        'id': 1,
-        'name': 'A Felicidade não se compra',
-        'duration': '2h23m'
-    },
-    {
-        'id': 2,
-        'name': 'Titanic',
-        'duration': '1h59m'
-    },
-    {
-        'id': 3,
-        'name': 'Esqueceram de mim',
-        'duration': '3h02m'
-    },
-]
-
-
 @login_decorator
 def show_movies():
     movie_service = MovieService()
