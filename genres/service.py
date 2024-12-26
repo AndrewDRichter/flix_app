@@ -1,7 +1,7 @@
 from genres.repository import GenreRepository
 
 
-class GenreService():
+class GenreService:
 
     def __init__(self):
         self.genre_repository = GenreRepository()
