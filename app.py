@@ -7,8 +7,6 @@ from home.page import show_home
 
 
 def main():
-    st.title('Flix App')
-
     menu_option = st.sidebar.selectbox(
         'Selecione um opção',
         ['Inicio', 'Gêneros', 'Atores', 'Filmes', 'Avaliações']

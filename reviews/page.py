@@ -47,6 +47,6 @@ def show_reviews():
         )
         if new_review:
             st.rerun()
-            st.success(f'Avaliação registrada com sucesso!')
+            st.success('Avaliação registrada com sucesso!')
         else:
             st.error('Erro ao registrar avaliação.')

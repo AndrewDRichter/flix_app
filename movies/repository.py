@@ -11,7 +11,7 @@ class MovieRepository:
         self.__headers = {
             'Authorization': f'Bearer {st.session_state.token}'
         }
-    
+
     def get_movies(self):
         response = requests.get(
             url=self.__movies_url,

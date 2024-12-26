@@ -51,4 +51,4 @@ def show_actors():
             st.rerun()
             st.success(f'Ator "{name}" cadastrado com sucesso!')
         else:
-            st.error(f'Erro ao cadastrar ator.')
+            st.error('Erro ao cadastrar ator.')

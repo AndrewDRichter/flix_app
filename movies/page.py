@@ -28,19 +28,19 @@ def show_movies():
     st.title('Cadastrar Filme: ')
     title = st.text_input('Título: ')
     release_date = st.date_input(
-         label='Data de lançamento',
-         value=datetime.today(),
-         min_value=datetime(1800, 1, 1).date(),
-         max_value=datetime.today(),
-         format='DD/MM/YYYY',
+        label='Data de lançamento',
+        value=datetime.today(),
+        min_value=datetime(1800, 1, 1).date(),
+        max_value=datetime.today(),
+        format='DD/MM/YYYY',
     )
 
     genre_service = GenreService()
     genres = genre_service.get_genres()
     genre_names = {genre['name']: genre['id'] for genre in genres}
     selected_genre_name = st.selectbox(
-         label='Gênero',
-         options=list(genre_names.keys()),
+        label='Gênero',
+        options=list(genre_names.keys()),
     )
     genre = genre_names[selected_genre_name]
 
@@ -48,13 +48,13 @@ def show_movies():
     actor_choices = actor_service.get_actors()
     actor_names = {actor['name']: actor['id'] for actor in actor_choices}
     selected_actors_names = st.multiselect(
-         label='Atores',
-         options=list(actor_names.keys()),
+        label='Atores',
+        options=list(actor_names.keys()),
     )
     actors = [actor_names[actor] for actor in selected_actors_names]
 
     summary = st.text_area(
-         label='Resumo'
+        label='Resumo'
     )
     if st.button('Cadastrar'):
         new_movie = movie_service.create_movies(
