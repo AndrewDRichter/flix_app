@@ -15,6 +15,7 @@ def show_reviews():
     if reviews:
         st.write('Lista de Avaliações: ')
         reviews_df = pd.json_normalize(reviews)
+        reviews_df = reviews_df.drop(columns=['movie.release_date', 'movie.summary', 'movie.duration', 'movie.genre', 'movie.actors'])
         AgGrid(
             data=reviews_df,
             fit_columns_on_grid_load=True,

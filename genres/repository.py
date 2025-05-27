@@ -6,7 +6,8 @@ from login.service import logout
 class GenreRepository:
 
     def __init__(self):
-        self.__base_url = 'https://andrewrichter.pythonanywhere.com/api/v1/'
+        # self.__base_url = 'https://andrewrichter.pythonanywhere.com/api/v1/'
+        self.__base_url = 'http://localhost:8000/api/v1/'
         self.__genres_url = f'{self.__base_url}genres/'
         self.__headers = {
             'Authorization': f'Bearer {st.session_state.token}'
